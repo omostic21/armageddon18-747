@@ -1,7 +1,7 @@
 # See LICENSE file for license and copyright information
 
 PROJECT = libflush
-ARCH = x86
+ARCH = armv7
 
 LIBFLUSH_VERSION_MAJOR = 0
 LIBFLUSH_VERSION_MINOR = 0
@@ -31,7 +31,7 @@ SOVERSION = ${SOMAJOR}.${SOMINOR}
 PKG_CONFIG ?= pkg-config
 
 # paths
-PREFIX ?= /usr
+PREFIX ?= /users/eeshak/armageddon18-747/libflush
 LIBDIR ?= ${PREFIX}/lib
 INCLUDEDIR ?= ${PREFIX}/include
 DEPENDDIR=.depend
