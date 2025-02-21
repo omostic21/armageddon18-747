@@ -14,7 +14,7 @@
 #include <sys/mman.h>
 #include <fcntl.h>
 
-#include <libflush/libflush.h>
+#include "libflush/libflush.h"
 
 #include "configuration.h"
 #include "lock.h"

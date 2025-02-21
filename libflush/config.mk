@@ -1,7 +1,7 @@
 # See LICENSE file for license and copyright information
 
 PROJECT = libflush
-ARCH = armv7
+ARCH = x86
 
 LIBFLUSH_VERSION_MAJOR = 0
 LIBFLUSH_VERSION_MINOR = 0

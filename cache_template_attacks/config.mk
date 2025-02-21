@@ -18,7 +18,7 @@ LIBFLUSH_PKG_CONFIG_NAME = libflush
 PKG_CONFIG ?= pkg-config
 
 # paths
-PREFIX ?= /usr
+PREFIX ?= /users/eeshak/armageddon18-747/cache_template_attacks
 DEPENDDIR ?= .depend
 BUILDDIR ?= build/${ARCH}
 BUILDDIR_RELEASE ?= ${BUILDDIR}/release
