@@ -31,3 +31,5 @@ compile_commands.json
 # android files
 obj/
 libs/
+
+config.mk

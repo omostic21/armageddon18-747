@@ -31,7 +31,7 @@ SOVERSION = ${SOMAJOR}.${SOMINOR}
 PKG_CONFIG ?= pkg-config
 
 # paths
-PREFIX ?= /users/eeshak/armageddon18-747/libflush
+PREFIX ?= /users/eesha/armageddon18-747/libflush
 LIBDIR ?= ${PREFIX}/lib
 INCLUDEDIR ?= ${PREFIX}/include
 DEPENDDIR=.depend
