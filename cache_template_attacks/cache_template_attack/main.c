@@ -229,13 +229,13 @@ int main(int argc, char* argv[])
   }
 #else
   /* Create shared memory for current offset */
-  shared_data_shm_fd = shmget(IPC_PRIVATE, sizeof(shared_data_t), IPC_CREAT | SHM_R | SHM_W);
+  shared_data_shm_fd = shmget(IPC_PRIVATE, sizeof(shared_data_t), IPC_CREAT | SHM_R | SHM_W); //alocates shared memory, returns identifier
   if (shared_data_shm_fd == -1) {
     fprintf(stderr, "Error: Could not get shared memory segment.\n");
     return -1;
   }
 
-  shared_data = shmat(shared_data_shm_fd, NULL, 0);
+  shared_data = shmat(shared_data_shm_fd, NULL, 0);//use identifier to get address, attches shared memory to the address space of calling process
   if (shared_data == (void*) -1) {
     fprintf(stderr, "Error: Could not attach shared memory.\n");
     return -1;

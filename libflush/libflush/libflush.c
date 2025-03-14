@@ -131,7 +131,7 @@ libflush_flush(libflush_session_t* session, void* address)
 #elif defined(__ARM_ARCH_8A__)
   arm_v8_flush(address);
 #elif defined(__i386__) || defined(__x86_64__)
-  x86_flush(address);
+  x86_flush(address); //uses cflush to flush the cache line
 #else
 #error No flush/eviction method available on this platform
 #endif

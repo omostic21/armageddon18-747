@@ -225,7 +225,7 @@ main(int argc, char* argv[])
 
   /* Map memory region */
 #define MAP_SIZE 4096
-  void* array = mmap(NULL, MAP_SIZE, PROT_READ | PROT_WRITE, MAP_POPULATE | MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+  void* array = mmap(NULL, MAP_SIZE, PROT_READ | PROT_WRITE, MAP_POPULATE | MAP_ANONYMOUS | MAP_PRIVATE, -1, 0); //creates a new mapping in the virtual address space
   if (array == MAP_FAILED) {
     fprintf(stderr, "Error: Could not map memory.\n");
 

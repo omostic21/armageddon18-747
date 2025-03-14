@@ -31,9 +31,9 @@ simulator_init(simulator_t** simulator)
   }
 
 #if defined(ALTO45)
-  (*simulator)->fd_tap = open("/dev/input/event5", O_WRONLY);
+  (*simulator)->fd_tap = open("/dev/input/event1", O_WRONLY);
 #elif defined(MAKO)
-  (*simulator)->fd_tap = open("/dev/input/event2", O_WRONLY);
+  (*simulator)->fd_tap = open("/dev/input/event1", O_WRONLY);
 #else
   (*simulator)->fd_tap = open("/dev/input/event1", O_WRONLY);
 #endif

@@ -2,3 +2,9 @@ android-ndk-r11c-linux-x86_64.zip
 android-ndk-r11c-linux-x86_64.zip
 
 *config.mk
+
+simulator
+keyboard
+eviction_strategy_evaluator/dist/
+input_simulator/.depend/
+input_simulator/build/
