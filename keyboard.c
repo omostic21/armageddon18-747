@@ -30,6 +30,8 @@ int main(void)
     */
    ioctl(fd, UI_SET_EVBIT, EV_KEY);
    ioctl(fd, UI_SET_KEYBIT, KEY_SPACE);
+   ioctl(fd, UI_SET_KEYBIT, KEY_BACKSPACE);
+   ioctl(fd, UI_SET_KEYBIT, KEY_ENTER);
    ioctl(fd, UI_SET_KEYBIT, KEY_A);
    ioctl(fd, UI_SET_KEYBIT, KEY_B);
    ioctl(fd, UI_SET_KEYBIT, KEY_C);
@@ -37,10 +39,6 @@ int main(void)
    ioctl(fd, UI_SET_KEYBIT, KEY_E);
    ioctl(fd, UI_SET_KEYBIT, KEY_F);
    ioctl(fd, UI_SET_KEYBIT, KEY_G);
-   ioctl(fd, UI_SET_KEYBIT, KEY_H);
-
-
-
 
    memset(&usetup, 0, sizeof(usetup));
    usetup.id.bustype = BUS_USB;
@@ -59,19 +57,16 @@ int main(void)
     * to send. This pause is only needed in our example code!
     */
    while(1){
-    sleep(10);
+    sleep(5);
 
     /* Key press, report the event, send key release, and report again */
-    emit(fd, EV_KEY, KEY_SPACE, 1);
-    emit(fd, EV_SYN, SYN_REPORT, 0);
-    emit(fd, EV_KEY, KEY_SPACE, 0);
-    emit(fd, EV_SYN, SYN_REPORT, 0);
+   
 
     /*
         * Give userspace some time to read the events before we destroy the
         * device with UI_DEV_DESTOY.
         */
-    sleep(10);
+    sleep(5);
     }
 
    ioctl(fd, UI_DEV_DESTROY);

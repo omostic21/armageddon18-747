@@ -17,6 +17,7 @@ static void close_restricted(int fd, void *user_data) {
 int main() {
     struct libinput *li;
     struct libinput_event *event;
+    struct libinput_event_keyboard *eventk;
     struct libinput_interface interface = {
         .open_restricted = open_restricted,
         .close_restricted = close_restricted,
@@ -35,7 +36,9 @@ int main() {
         libinput_dispatch(li);
         while ((event = libinput_get_event(li))) {
             if (libinput_event_get_type(event) == LIBINPUT_EVENT_KEYBOARD_KEY) {
-                printf("Key event detected!\n");
+                eventk = libinput_event_get_keyboard_event(event);
+                printf("%d", libinput_event_keyboard_get_key(eventk));
+                printf("\n");
             }
             libinput_event_destroy(event);
         }
